@@ -306,7 +306,6 @@ body { background: var(--white); }
 .about-icon {
   width: 60px;
   height: 60px;
-  background: var(--lavender-web);
   display: grid;
   place-items: center;
   color: var(--majorelle-blue);
