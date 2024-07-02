@@ -115,6 +115,83 @@ html {
 body { background: var(--white); }
 
 
+/* Depoimentos */
+.testimonials {
+  background-color: #ffffff;
+  padding: 50px 0;
+}
+
+.testimonials .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.section-title {
+  color: #000000;
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 2.5rem;
+}
+
+.testimonials-wrapper {
+  display: flex;
+  overflow-x: auto;
+  gap: 20px;
+  padding-bottom: 10px;
+  scroll-behavior: smooth;
+}
+
+.testimonial {
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  padding: 15px;
+  min-width: 250px;
+  max-width: 250px;
+  flex: 0 0 auto;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial-img {
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  margin-bottom: 10px;
+}
+
+.testimonial-name {
+  color: #000000;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.testimonial-text {
+  color: #333333;
+  font-size: 1rem;
+}
+
+/* Barra de rolagem personalizada */
+.testimonials-wrapper::-webkit-scrollbar {
+  height: 10px;
+}
+
+.testimonials-wrapper::-webkit-scrollbar-thumb {
+  background-color: #007bff; /* Cor azul */
+  border-radius: 10px;
+}
+
+/* Garantir que os itens fiquem lado a lado em dispositivos móveis */
+@media (max-width: 768px) {
+  .testimonials-wrapper {
+    flex-wrap: nowrap;
+  }
+
+  .testimonial {
+    width: auto;
+    margin-bottom: 0;
+  }
+}
 
 
 
