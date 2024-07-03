@@ -33,6 +33,11 @@
     - HEADER
   -->
 
+  <div id="preloader">
+    <div class="loader"></div>
+  </div>
+  
+
   <header class="header" data-header>
     <div class="container">
 
@@ -58,10 +63,13 @@
           <li>
             <a href="#blog" class="navbar-link">Serviços</a>
           </li>
-
+          <li>
+            <a href="#testimonials" class="navbar-link">Depoimentos</a>
+          </li>
           <li>
             <a href="#contact" class="navbar-link">Contato</a>
           </li>
+          
           <li>
             <a href="http://192.168.12.103:8888/mapos/index.php/mine" class="navbar-link">Login</a>
           </li>
@@ -136,7 +144,6 @@
               Somos a CMG consultoria financeira! Uma empresa consolidada a mais de 10 anos no mercado, possuímos CNPJ e escritório próprio em Alphaville-SP!
             </p>
 
-            <button class="btn btn-outline">Saiba mais</button>
 
           </div>
 
@@ -268,8 +275,8 @@
               </ul>
 
               <div class="btn-group">
-                <a href="#" class="btn btn-primary">Veja mais</a>
-                <a href="https://wa.me/5511959888690?text=Ol%C3%A1!%20Tenho%20um%20grande%20interesse%20em%20obter%20mais%20informa%C3%A7%C3%B5es%20sobre%20a%20limpeza%20de%20nome.%20Poderia%20me%20fornecer%20detalhes%20adicionais,%20por%20favor?" class="btn btn-secondary">Garanta agora</a>
+                <a href="https://wa.me/5511959888690?text=Ol%C3%A1!%20Tenho%20um%20grande%20interesse%20em%20obter%20mais%20informa%C3%A7%C3%B5es%20sobre%20a%20limpeza%20de%20nome.%20Poderia%20me%20fornecer%20detalhes%20adicionais,%20por%20favor?" class="btn btn-primary">Garanta agora</a>
+               
             </div>
             
 
@@ -316,8 +323,8 @@
               </ul>
 
               <div class="btn-group">
-                <a href="#" class="btn btn-primary">Veja mais</a>
-                <a href="https://wa.me/5511959888690?text=Ol%C3%A1!%20Estou%20interessado%20em%20saber%20mais%20sobre%20como%20limpar%20meu%20%20Bacen.%20Poderia%20me%20fornecer%20mais%20detalhes?" class="btn btn-secondary">Garanta agora</a>
+                <a href="https://wa.me/5511959888690?text=Ol%C3%A1!%20Tenho%20um%20grande%20interesse%20em%20obter%20mais%20informa%C3%A7%C3%B5es%20sobre%20a%20limpeza%20de%20nome.%20Poderia%20me%20fornecer%20detalhes%20adicionais,%20por%20favor?" class="btn btn-primary">Garanta agora</a>
+                
             </div>
 
             </div>
@@ -559,39 +566,42 @@
       </section>
 
             <!-- Depoimentos-->
-      <section class="testimonials" id="testimonials">
-        <div class="container">
-          <h2 class="section-title">Depoimentos</h2>
-          <div class="testimonials-wrapper">
-            <div class="testimonial">
-              <img src="./assets/images/foto teste.jpg" alt="Foto de Henrique Guerra" class="testimonial-img">
-              <h3 class="testimonial-name">Henrique Guerra</h3>
-              <p class="testimonial-text">Ótimo profissional, excelente com a visibilidade de minhas ideias e com a...</p>
+            <section class="testimonials" id="testimonials">
+              <div class="container">
+                <h2 class="section-title">Depoimentos</h2>
+                <div class="testimonials-wrapper">
+                  <div class="testimonial">
+                    <h3 class="testimonial-name">Henrique Guerra</h3>
+                    <p class="testimonial-text">Ótimo profissional, excelente com a visibilidade de minhas ideias e com a...</p>
+                  </div>
+                  <div class="testimonial">
+                    <h3 class="testimonial-name">Maria Alves</h3>
+                    <p class="testimonial-text">Gustavo tem sido uma adição valiosa para nossa equipe de desenvolvimento web. Suas...</p>
+                  </div>
+                  <div class="testimonial">
+                    <h3 class="testimonial-name">Maria Alves</h3>
+                    <p class="testimonial-text">Gustavo tem sido uma adição valiosa para nossa equipe de desenvolvimento web. Suas...</p>
+                  </div>
+                  <div class="testimonial">
+                    <h3 class="testimonial-name">Maria Alves</h3>
+                    <p class="testimonial-text">Gustavo tem sido uma adição valiosa para nossa equipe de desenvolvimento web. Suas...</p>
+                  </div>
+                  <div class="testimonial">
+                    <h3 class="testimonial-name">Maria Alves</h3>
+                    <p class="testimonial-text">Gustavo tem sido uma adição valiosa para nossa equipe de desenvolvimento web. Suas...</p>
+                  </div>
+                  <!-- Adicione mais depoimentos aqui conforme necessário -->
+                </div>
+              </div>
+            </section>
+            <div class="modal" id="testimonial-modal">
+              <div class="modal-content">
+                <span class="close-button">&times;</span>
+                <h3 class="modal-name"></h3>
+                <p class="modal-text"></p>
+              </div>
             </div>
-            <div class="testimonial">
-              <img src="./assets/images/foto teste.jpg" alt="Foto de Maria Alves" class="testimonial-img">
-              <h3 class="testimonial-name">Maria Alves</h3>
-              <p class="testimonial-text">Gustavo tem sido uma adição valiosa para nossa equipe de desenvolvimento web. Suas...</p>
-            </div>
-            <div class="testimonial">
-              <img src="./assets/images/foto teste.jpg" alt="Foto de Maria Alves" class="testimonial-img">
-              <h3 class="testimonial-name">Maria Alves</h3>
-              <p class="testimonial-text">Gustavo tem sido uma adição valiosa para nossa equipe de desenvolvimento web. Suas...</p>
-            </div>
-            <div class="testimonial">
-              <img src="./assets/images/foto teste.jpg" alt="Foto de Maria Alves" class="testimonial-img">
-              <h3 class="testimonial-name">Maria Alves</h3>
-              <p class="testimonial-text">Gustavo tem sido uma adição valiosa para nossa equipe de desenvolvimento web. Suas...</p>
-            </div>
-            <div class="testimonial">
-              <img src="./assets/images/foto teste.jpg" alt="Foto de Maria Alves" class="testimonial-img">
-              <h3 class="testimonial-name">Maria Alves</h3>
-              <p class="testimonial-text">Gustavo tem sido uma adição valiosa para nossa equipe de desenvolvimento web. Suas...</p>
-            </div>
-            <!-- Adicione mais depoimentos aqui conforme necessário -->
-          </div>
-        </div>
-      </section>
+            
       
 
 
