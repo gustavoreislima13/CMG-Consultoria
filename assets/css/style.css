@@ -114,7 +114,6 @@ html {
 
 body { background: var(--white); }
 
-
 /* Depoimentos */
 .testimonials {
   background-color: #ffffff;
@@ -138,7 +137,7 @@ body { background: var(--white); }
   display: flex;
   overflow-x: auto;
   gap: 20px;
-  padding-bottom: 10px;
+  padding-bottom: 30px; /* Adiciona espaço para centralizar a barra de rolagem */
   scroll-behavior: smooth;
 }
 
@@ -152,6 +151,8 @@ body { background: var(--white); }
   text-align: center;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   cursor: pointer;
+  overflow: hidden;
+  height: 150px; /* Altura fixa para os depoimentos */
 }
 
 .testimonial-name {
@@ -163,12 +164,19 @@ body { background: var(--white); }
 .testimonial-text {
   color: #333333;
   font-size: 1rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* Mostra mais linhas do texto */
+  -webkit-box-orient: vertical;
 }
 
 /* Barra de rolagem personalizada */
 .testimonials-wrapper::-webkit-scrollbar {
-  height: 4px; /* Reduz a altura da barra de rolagem */
-  background: transparent; /* Torna a barra de rolagem mais discreta */
+  height: 6px; /* Reduz a altura da barra de rolagem */
+  width: 50%; /* Largura da barra de rolagem */
+  margin: 0 auto; /* Centraliza a barra de rolagem */
+  display: block;
 }
 
 .testimonials-wrapper::-webkit-scrollbar-thumb {
@@ -187,40 +195,6 @@ body { background: var(--white); }
     max-width: calc(100% / 1.2 - 20px);
   }
 }
-
-
-
-#preloader {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #fff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
-}
-
-.loader {
-  border: 16px solid #f3f3f3;
-  border-top: 16px solid #3498db;
-  border-radius: 50%;
-  width: 120px;
-  height: 120px;
-  animation: spin 2s linear infinite;
-}
-
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-
-body.loading #main-content {
-  display: none;
-}
-
 
 /* Modal */
 .modal {
