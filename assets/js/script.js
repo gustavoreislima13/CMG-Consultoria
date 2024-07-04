@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function() {
   const modalText = document.querySelector('.modal-text');
   const closeButton = document.querySelector('.close-button');
 
-  testimonialsWrapper.scrollLeft = 0; // Inicializa a rolagem no início
+  testimonialsWrapper.scrollLeft = testimonialsWrapper.scrollWidth / 2;
 
   testimonialsWrapper.addEventListener('wheel', (event) => {
     event.preventDefault();
@@ -29,12 +29,12 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Verifica se chegou ao final
     if (testimonialsWrapper.scrollLeft + testimonialsWrapper.clientWidth >= testimonialsWrapper.scrollWidth) {
-      testimonialsWrapper.scrollLeft = 0; // Reinicia a rolagem para o início
+      testimonialsWrapper.scrollLeft = testimonialsWrapper.clientWidth;
     }
 
     // Verifica se chegou ao início
     if (testimonialsWrapper.scrollLeft <= 0) {
-      testimonialsWrapper.scrollLeft = testimonialsWrapper.scrollWidth - testimonialsWrapper.clientWidth; // Rola para o final
+      testimonialsWrapper.scrollLeft = testimonialsWrapper.scrollWidth / 2;
     }
   });
 
@@ -55,4 +55,13 @@ document.addEventListener("DOMContentLoaded", function() {
       modal.style.display = "none";
     }
   });
+});
+
+
+document.addEventListener("DOMContentLoaded", function() {
+  // Remove o preloader após um curto período
+  setTimeout(function() {
+    document.body.classList.remove("loading");
+    document.getElementById("preloader").style.display = "none";
+  }, 1000); // tempo reduzido para 1 segundo (1000 milissegundos)
 });
