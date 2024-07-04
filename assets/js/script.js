@@ -19,7 +19,17 @@ document.addEventListener("DOMContentLoaded", function() {
   const modalText = document.querySelector('.modal-text');
   const closeButton = document.querySelector('.close-button');
 
-  testimonialsWrapper.scrollLeft = testimonialsWrapper.scrollWidth / 2;
+  // Função para duplicar os elementos para rolagem infinita
+  function cloneTestimonials() {
+    testimonials.forEach(testimonial => {
+      const clone = testimonial.cloneNode(true);
+      testimonialsWrapper.appendChild(clone);
+    });
+  }
+
+  cloneTestimonials(); // Clona os depoimentos
+
+  testimonialsWrapper.scrollLeft = 0; // Inicializa a rolagem no início
 
   testimonialsWrapper.addEventListener('wheel', (event) => {
     event.preventDefault();
@@ -29,21 +39,22 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Verifica se chegou ao final
     if (testimonialsWrapper.scrollLeft + testimonialsWrapper.clientWidth >= testimonialsWrapper.scrollWidth) {
-      testimonialsWrapper.scrollLeft = testimonialsWrapper.clientWidth;
+      testimonialsWrapper.scrollLeft = 0; // Reinicia a rolagem para o início
     }
 
     // Verifica se chegou ao início
     if (testimonialsWrapper.scrollLeft <= 0) {
-      testimonialsWrapper.scrollLeft = testimonialsWrapper.scrollWidth / 2;
+      testimonialsWrapper.scrollLeft = testimonialsWrapper.scrollWidth - testimonialsWrapper.clientWidth; // Rola para o final
     }
   });
 
-  testimonials.forEach(testimonial => {
-    testimonial.addEventListener('click', () => {
+  testimonialsWrapper.addEventListener('click', (event) => {
+    if (event.target.closest('.testimonial')) {
+      const testimonial = event.target.closest('.testimonial');
       modalName.textContent = testimonial.querySelector('.testimonial-name').textContent;
       modalText.textContent = testimonial.querySelector('.testimonial-text').textContent;
       modal.style.display = "flex";
-    });
+    }
   });
 
   closeButton.addEventListener('click', () => {
@@ -56,6 +67,8 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   });
 });
+
+
 
 
 document.addEventListener("DOMContentLoaded", function() {
