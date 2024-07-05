@@ -67,3 +67,18 @@ document.addEventListener("DOMContentLoaded", function() {
     document.getElementById("preloader").style.display = "none";
   }, 1000); // tempo reduzido para 1 segundo (1000 milissegundos)
 });
+
+function sendWhatsAppMessage(event) {
+  event.preventDefault();
+
+  const name = document.getElementById('name').value;
+  const phone = document.getElementById('phone').value;
+  const message = document.getElementById('message').value;
+
+  const whatsappMessage = `Olá, meu nome é ${name}. Meu número é ${phone}. Gostaria de falar sobre: ${message}`;
+
+  const whatsappURL = `https://api.whatsapp.com/send?phone=5511959888690&text=${encodeURIComponent(whatsappMessage)}`;
+
+  window.open(whatsappURL, '_blank');
+}
+
