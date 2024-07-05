@@ -138,60 +138,37 @@ body { background: var(--white); }
   display: flex;
   overflow-x: auto;
   gap: 20px;
-  padding-bottom: 20px; /* Ajusta o padding inferior */
+  padding-bottom: 10px;
   scroll-behavior: smooth;
 }
 
 .testimonial {
   background-color: #f9f9f9;
   border-radius: 10px;
-  padding: 10px; /* Reduz o padding para diminuir o espaço interno */
+  padding: 15px;
   min-width: calc((100% / 3) - 20px); /* Largura mínima para mostrar 3 depoimentos por vez */
   max-width: calc((100% / 3) - 20px);
   flex: 0 0 auto;
-  text-align: left;
+  text-align: center;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   cursor: pointer;
-  overflow: hidden;
-  height: 180px; /* Ajusta a altura fixa para os depoimentos */
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.testimonial-header {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 5px; /* Ajusta a margem inferior */
-}
-
-.testimonial-img {
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
 }
 
 .testimonial-name {
   color: #000000;
-  font-size: 1rem; /* Diminui o tamanho da fonte do nome */
-  margin: 0;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
 }
 
 .testimonial-text {
   color: #333333;
-  font-size: 0.875rem; /* Diminui o tamanho da fonte do texto */
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: 3; /* Controla quantas linhas são mostradas */
-  -webkit-box-orient: vertical;
-  margin-top: 5px; /* Reduz a margem superior para aproximar do nome */
+  font-size: 1rem;
 }
 
 /* Barra de rolagem personalizada */
 .testimonials-wrapper::-webkit-scrollbar {
-  height: 6px; /* Reduz a altura da barra de rolagem */
+  height: 4px; /* Reduz a altura da barra de rolagem */
+  background: transparent; /* Torna a barra de rolagem mais discreta */
 }
 
 .testimonials-wrapper::-webkit-scrollbar-thumb {
@@ -201,10 +178,6 @@ body { background: var(--white); }
 
 .testimonials-wrapper::-webkit-scrollbar-track {
   background: transparent; /* Torna o trilho da barra de rolagem transparente */
-}
-
-.testimonials-wrapper {
-  justify-content: center; /* Centraliza a barra de rolagem */
 }
 
 /* Ajuste para dispositivos móveis */
@@ -237,6 +210,82 @@ body { background: var(--white); }
   width: 80%;
   max-width: 600px;
   text-align: center;
+}
+
+.close-button {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.testimonial {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px; /* Espaço entre os depoimentos */
+  padding: 20px;
+  border: 1px solid #ddd; /* Bordas para diferenciar cada depoimento */
+  border-radius: 8px; /* Bordas arredondadas */
+  background-color: #f9f9f9; /* Cor de fundo */
+}
+
+.testimonial-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.testimonial-name {
+  display: flex;
+  align-items: center;
+}
+
+.testimonial-image {
+  width: 30px; /* Ajuste o tamanho da imagem conforme necessário */
+  height: 30px; /* Ajuste o tamanho da imagem conforme necessário */
+  border-radius: 50%; /* Torna a imagem circular, se desejado */
+  margin-right: 10px; /* Espaço entre a imagem e o texto */
+}
+
+.testimonial-text {
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* Número de linhas a serem exibidas */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+  text-align: center; /* Centraliza o texto */
+}
+
+.modal {
+  display: none; /* Oculta o modal por padrão */
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0,0,0); /* Black w/ opacity */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
 }
 
 .close-button {

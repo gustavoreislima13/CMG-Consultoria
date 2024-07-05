@@ -19,17 +19,8 @@ document.addEventListener("DOMContentLoaded", function() {
   const modalText = document.querySelector('.modal-text');
   const closeButton = document.querySelector('.close-button');
 
-  // Função para duplicar os elementos para rolagem infinita
-  function cloneTestimonials() {
-    testimonials.forEach(testimonial => {
-      const clone = testimonial.cloneNode(true);
-      testimonialsWrapper.appendChild(clone);
-    });
-  }
-
-  cloneTestimonials(); // Clona os depoimentos
-
-  testimonialsWrapper.scrollLeft = 0; // Inicializa a rolagem no início
+  // Inicializa a rolagem no início
+  testimonialsWrapper.scrollLeft = 0;
 
   testimonialsWrapper.addEventListener('wheel', (event) => {
     event.preventDefault();
@@ -48,13 +39,12 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   });
 
-  testimonialsWrapper.addEventListener('click', (event) => {
-    if (event.target.closest('.testimonial')) {
-      const testimonial = event.target.closest('.testimonial');
+  testimonials.forEach(testimonial => {
+    testimonial.addEventListener('click', () => {
       modalName.textContent = testimonial.querySelector('.testimonial-name').textContent;
       modalText.textContent = testimonial.querySelector('.testimonial-text').textContent;
       modal.style.display = "flex";
-    }
+    });
   });
 
   closeButton.addEventListener('click', () => {
@@ -67,7 +57,6 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   });
 });
-
 
 
 
