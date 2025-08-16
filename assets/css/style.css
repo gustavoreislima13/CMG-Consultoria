@@ -73,6 +73,16 @@ input, textarea {
   width: 100%;
 }
 
+:root {
+  /** colors */
+  --raisin-black-2: hsl(240, 10%, 17%);
+  --raisin-black-1: hsl(244, 17%, 19%);
+  --majorelle-blue: hsl(212, 86%, 50%);
+  --light-majorelle-blue: hsl(212, 90%, 96%); /* <<-- ADICIONE ESTA LINHA */
+  --ghost-white-1: hsl(240, 100%, 99%);
+  /* ... (o resto das suas variáveis continua igual) */
+}
+
 html {
   font-family: var(--ff-quicksand);
   scroll-behavior: smooth;
@@ -236,9 +246,12 @@ body { background: var(--white); }
 \*-----------------------------------*/
 .hero {
   padding: 125px 0 var(--section-padding);
-  background: var(--ghost-white-1);
-}
+  /* SUBSTITUA A LINHA ABAIXO... */
+  /* background: var(--ghost-white-1); */
 
+  /* ...POR ESTA NOVA LINHA COM O DEGRADÊ */
+  background: linear-gradient(to bottom, var(--light-majorelle-blue), var(--ghost-white-1));
+}
 .hero-content { margin-bottom: 80px; }
 .hero-title { margin-bottom: 25px; }
 
